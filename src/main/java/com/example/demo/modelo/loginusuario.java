@@ -18,8 +18,7 @@ public class loginusuario {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE )
 	private Long idloginusuario;
 	
-	@Column(name="claveUs")
-	private Long claveUs;
+	
 	
 	@ManyToOne()
 	@JoinColumn(name = "nIdentificacion",referencedColumnName="nIdentificacion")
@@ -31,7 +30,6 @@ public class loginusuario {
 	public loginusuario(Long idloginusuario, Long claveUs,usuario usuario) {
 		super();
 		this.idloginusuario = idloginusuario;
-		this.claveUs = claveUs;
 		this.usuario = usuario;
 	}
 
@@ -43,13 +41,6 @@ public class loginusuario {
 		this.idloginusuario = idloginusuario;
 	}
 
-	public Long getClaveUs() {
-		return claveUs;
-	}
-
-	public void setClaveUs(Long claveUs) {
-		this.claveUs = claveUs;
-	}
 
 	public usuario getUsuario() {
 		return usuario;

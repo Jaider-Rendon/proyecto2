@@ -17,9 +17,6 @@ public class loginAdmi {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE )
 	private Long idloginadmi;
 	
-	@Column(name="clavead")
-	private Long clavead;
-	
 	@ManyToOne()
 	@JoinColumn(name = "codigoadmi",referencedColumnName="codigoadmi")
 	private administrador administrador;
@@ -31,7 +28,6 @@ public class loginAdmi {
 	public loginAdmi(Long idloginadmi, Long clavead,administrador administrador) {
 		super();
 		this.idloginadmi = idloginadmi;
-		this.clavead = clavead;
 		this.administrador = administrador;
 	}
 
@@ -41,14 +37,6 @@ public class loginAdmi {
 
 	public void setIdloginadmi(Long idloginadmi) {
 		this.idloginadmi = idloginadmi;
-	}
-
-	public Long getClavead() {
-		return clavead;
-	}
-
-	public void setClavead(Long clavead) {
-		this.clavead = clavead;
 	}
 
 	public administrador getAdministrador() {

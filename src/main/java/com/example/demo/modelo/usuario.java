@@ -49,14 +49,17 @@ public class usuario {
 	
 	@Column(name="correo")
 	private String correo;
+	
+	@Column(name="claveUs")
+	private Long claveUs;
 
 	public usuario() {
 	}
 
-	public usuario(Long cnIdentificacion, String nombre1, String nombre2, String apellido1, String apellido2,
-			Date fechaEclicen, Long telefono, Date vigencialicencia, String categoria, String correo) {
+	public usuario(Long nIdentificacion, String nombre1, String nombre2, String apellido1, String apellido2,
+			Date fechaEclicen, Long telefono, Date vigencialicencia, String categoria, String correo, Long claveUs) {
 		super();
-		this.nIdentificacion = cnIdentificacion;
+		this.nIdentificacion = nIdentificacion;
 		this.nombre1 = nombre1;
 		this.nombre2 = nombre2;
 		this.apellido1 = apellido1;
@@ -66,14 +69,15 @@ public class usuario {
 		this.vigencialicencia = vigencialicencia;
 		this.categoria = categoria;
 		this.correo = correo;
+		this.claveUs = claveUs;
 	}
 
-	public Long getCnIdentificacion() {
+	public Long getnIdentificacion() {
 		return nIdentificacion;
 	}
 
-	public void setCnIdentificacion(Long cnIdentificacion) {
-		this.nIdentificacion = cnIdentificacion;
+	public void setnIdentificacion(Long nIdentificacion) {
+		this.nIdentificacion = nIdentificacion;
 	}
 
 	public String getNombre1() {
@@ -147,6 +151,16 @@ public class usuario {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
+	public Long getClaveUs() {
+		return claveUs;
+	}
+
+	public void setClaveUs(Long claveUs) {
+		this.claveUs = claveUs;
+	}
+
+	
 	
 	
 	

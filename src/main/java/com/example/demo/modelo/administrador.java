@@ -16,17 +16,24 @@ public class administrador {
 	@Column(name="usuario")
 	private String usuario;
 	
+	@Column(name="clavead")
+	private Long clavead;
+	
 	
 
 	public administrador() {
 		
 	}
 
-	public administrador(Long codigoadmi, String usuario) {
+
+
+	public administrador(Long codigoadmi, String usuario, Long clavead) {
 		super();
 		this.codigoadmi = codigoadmi;
 		this.usuario = usuario;
+		this.clavead = clavead;
 	}
+
 
 
 	public Long getCodigoadmi() {
@@ -34,9 +41,11 @@ public class administrador {
 	}
 
 
+
 	public void setCodigoadmi(Long codigoadmi) {
 		this.codigoadmi = codigoadmi;
 	}
+
 
 
 	public String getUsuario() {
@@ -44,9 +53,23 @@ public class administrador {
 	}
 
 
+
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
+
+
+
+	public Long getClavead() {
+		return clavead;
+	}
+
+
+
+	public void setClavead(Long clavead) {
+		this.clavead = clavead;
+	}
+
 	
 	
 	
