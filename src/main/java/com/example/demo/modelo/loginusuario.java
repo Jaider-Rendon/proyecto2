@@ -1,6 +1,6 @@
 package com.example.demo.modelo;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,9 +27,8 @@ public class loginusuario {
 	public loginusuario() {
 	}
 
-	public loginusuario(Long idloginusuario, Long claveUs,usuario usuario) {
+	public loginusuario(Long claveUs,usuario usuario) {
 		super();
-		this.idloginusuario = idloginusuario;
 		this.usuario = usuario;
 	}
 

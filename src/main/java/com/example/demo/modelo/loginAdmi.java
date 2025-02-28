@@ -1,6 +1,6 @@
 package com.example.demo.modelo;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,9 +25,8 @@ public class loginAdmi {
 		
 	}
 
-	public loginAdmi(Long idloginadmi, Long clavead,administrador administrador) {
+	public loginAdmi( Long clavead,administrador administrador) {
 		super();
-		this.idloginadmi = idloginadmi;
 		this.administrador = administrador;
 	}
 
