@@ -49,12 +49,16 @@ public class alquiler {
 	@ManyToOne()
 	@JoinColumn(name = "nIdentificacion",referencedColumnName="nIdentificacion")
 	private usuario usuario;
+	
+	@ManyToOne()
+	@JoinColumn(name = "codigoadmi",referencedColumnName="codigoadmi")
+	private administrador administrador;
 
 	public alquiler() {
 	}
 
 	public alquiler(Long numeroalquiler, Date fechasoli, Date fechaentre, Long valoralquiler, String estadoalqui,
-			Date fechaalquiler,vehiculo vehiculo,usuario usuario) {
+			Date fechaalquiler,vehiculo vehiculo,usuario usuario, administrador administrador) {
 		super();
 		this.numeroalquiler = numeroalquiler;
 		this.fechasoli = fechasoli;
@@ -64,6 +68,7 @@ public class alquiler {
 		this.fechaalquiler = fechaalquiler;
 		this.vehiculo = vehiculo;
 		this.usuario = usuario;
+		this.administrador = administrador;
 	}
 
 	public Long getNumeroalquiler() {
@@ -129,6 +134,15 @@ public class alquiler {
 	public void setUsuario(usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public administrador getAdministrador() {
+		return administrador;
+	}
+
+	public void setAdministrador(administrador administrador) {
+		this.administrador = administrador;
+	}
+	
 	
 	
 	
