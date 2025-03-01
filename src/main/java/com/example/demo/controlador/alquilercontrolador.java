@@ -2,6 +2,7 @@ package com.example.demo.controlador;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,4 +69,52 @@ public class alquilercontrolador {
 	    return alqA;
 	}
 
+	
+	@GetMapping("/cancelarAlqui")
+	public List<Object> cancelar(@RequestParam Long numeroalquiler) {
+	    List<Object> alq = new LinkedList<>();
+	    Optional<alquiler> alquilerOpt = this.repositorio.findById(numeroalquiler);
+
+	    if (alquilerOpt.isPresent()) {
+	        alquiler alquiler = alquilerOpt.get();
+
+	       
+	        if (alquiler.getEstadoalqui().equals("Finalizado")) {
+	            alq.add("No se puede cancelar un alquiler ya finalizado: " + numeroalquiler);
+	            return alq;
+	        }
+
+	        alquiler.getVehiculo().setEstado("disponible");
+
+	        this.repositorio.deleteById(numeroalquiler);
+
+	        alq.add("Ha sido cancelado el alquiler: " + numeroalquiler);
+	        alq.add("Estado del vehículo actualizado a: Disponible");
+	    } else {
+	        alq.add("No se ha encontrado el alquiler: " + numeroalquiler);
+	    }
+
+	    return alq;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
