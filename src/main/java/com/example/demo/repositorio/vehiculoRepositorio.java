@@ -8,4 +8,3 @@ public interface vehiculoRepositorio extends JpaRepository<vehiculo,String>{
 
 }
 
-//s
