@@ -32,15 +32,15 @@ public class usuario {
 	private String apellido2;
 	
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="MM/dd/yyy")
+	@DateTimeFormat(pattern="dd/MM/yyy")
 	@Column(name="fechaExlicen",nullable=false)
-	private Date fechaEclicen;
+	private Date fechaExlicen;
 	
 	@Column(name="telefono")
 	private Long telefono;
 	
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="MM/dd/yyy")
+	@DateTimeFormat(pattern="dd/MM/yyy")
 	@Column(name="vigencialicencia",nullable=false)
 	private Date vigencialicencia;
 	
@@ -57,14 +57,14 @@ public class usuario {
 	}
 
 	public usuario(Long nIdentificacion, String nombre1, String nombre2, String apellido1, String apellido2,
-			Date fechaEclicen, Long telefono, Date vigencialicencia, String categoria, String correo, Long claveUs) {
+			Date fechaExlicen, Long telefono, Date vigencialicencia, String categoria, String correo, Long claveUs) {
 		super();
 		this.nIdentificacion = nIdentificacion;
 		this.nombre1 = nombre1;
 		this.nombre2 = nombre2;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
-		this.fechaEclicen = fechaEclicen;
+		this.fechaExlicen = fechaExlicen;
 		this.telefono = telefono;
 		this.vigencialicencia = vigencialicencia;
 		this.categoria = categoria;
@@ -113,11 +113,11 @@ public class usuario {
 	}
 
 	public Date getFechaEclicen() {
-		return fechaEclicen;
+		return fechaExlicen;
 	}
 
 	public void setFechaEclicen(Date fechaEclicen) {
-		this.fechaEclicen = fechaEclicen;
+		this.fechaExlicen = fechaEclicen;
 	}
 
 	public Long getTelefono() {
