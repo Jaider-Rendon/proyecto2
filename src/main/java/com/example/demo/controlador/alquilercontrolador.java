@@ -36,6 +36,7 @@ public class alquilercontrolador {
 				vehiculosNo.add("cedula: "+rrr);
 				return vehiculosNo;	
 			}	
+			
 		}
 		return vehiculosNo;		
 	}

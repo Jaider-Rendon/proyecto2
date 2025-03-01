@@ -23,8 +23,6 @@ public class loginUsuarioControlador {
 	
 	@Autowired 
 	private usuarioRepositorio repositorio2;
-	
-	
 	@GetMapping("/login")
 	public List<Object> loginUsuario(@RequestParam Long nIdentificacion1, Long claveUs1 ){
 		 List<Object> resultados = new LinkedList<>();

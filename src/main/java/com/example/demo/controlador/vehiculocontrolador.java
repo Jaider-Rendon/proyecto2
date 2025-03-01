@@ -40,6 +40,9 @@ public class vehiculocontrolador {
 				return tip;
 				
 			}
+			 if (tip.isEmpty()) {
+			        tip.add("No se encontró el tipo de auto");
+			    }
 	}
 		return tip;
 
