@@ -28,12 +28,12 @@ public class alquilercontrolador {
 			String EstadoAl=al.get(i).getEstadoalqui();
 			if(EstadoAl.equals(estadoAl)) {
 				String placa=al.get(i).getVehiculo().getPlaca();
-				String color= al.get(i).getVehiculo().getColor();
-				Long valor=al.get(i).getVehiculo().getValor();
-				vehiculosNo.add("Estado: "+EstadoAl);
+				String rr=al.get(i).getUsuario().getNombre1();
+				Long rrr=al.get(i).getUsuario().getnIdentificacion();
+				
 				vehiculosNo.add("Placa: "+placa);
-				vehiculosNo.add("Color: "+color);
-				vehiculosNo.add("valor: "+valor);
+				vehiculosNo.add("nombre: "+rr);
+				vehiculosNo.add("cedula: "+rrr);
 				return vehiculosNo;	
 			}	
 		}
