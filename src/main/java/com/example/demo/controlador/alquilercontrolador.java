@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.modelo.alquiler;
@@ -39,6 +40,32 @@ public class alquilercontrolador {
 			
 		}
 		return vehiculosNo;		
+	}
+	
+	@GetMapping("/actualizar")
+	public List<Object> Actualizar(@RequestParam String placa) {
+	    List<Object> alqA = new LinkedList<>();
+	    List<alquiler> Ac = this.repositorio.findAll();
+
+	    for (int i = 0; i < Ac.size(); i++) {
+	        String Placa = Ac.get(i).getVehiculo().getPlaca();
+	        if (Placa.equals(placa)) {
+	            String estadO = Ac.get(i).getEstadoalqui();
+	            Ac.get(i).setEstadoalqui("entregado");
+	            this.repositorio.save(Ac.get(i));
+
+	            String estado = Ac.get(i).getEstadoalqui();
+	            String tipo = Ac.get(i).getVehiculo().getTipovehiculo();
+	            alqA.add("Estado original: " + estadO);
+	            alqA.add("Placa: " + Placa);
+	            alqA.add("Estado: " + estado);
+	            alqA.add("tipo: " + tipo);
+	            return alqA;
+	        } else {
+	            alqA.add("No se encontraron vehículos relacionados con la placa: " + placa);
+	        }
+	    }
+	    return alqA;
 	}
 
 }
