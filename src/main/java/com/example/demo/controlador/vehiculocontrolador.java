@@ -48,4 +48,52 @@ public class vehiculocontrolador {
 
 }
 	
+	@GetMapping("/verdisponible")
+	public List<Object>verdisponible(@RequestParam String disponible){
+		List<Object> tip = new LinkedList <>();
+		List<vehiculo> al = this.repositorio.findAll();
+		String tipo=disponible;
+		for(int i=0;i<al.size();i++) {
+			String tipoad=al.get(i).getEstado();
+			if(tipo.equals(tipoad)) {
+				String plata=al.get(i).getPlaca();
+				String color=al.get(i).getColor();
+				Long valor=al.get(i).getValor();
+				
+				tip.add("placa: "+plata);
+				tip.add("color: "+color);
+				tip.add("valor: "+valor);
+				tip.add("------");
+				
+				
+			}
+			 if (tip.isEmpty()) {
+			        tip.add("No hay autos disponibles");
+			    }
+	}
+		return tip;
+
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
