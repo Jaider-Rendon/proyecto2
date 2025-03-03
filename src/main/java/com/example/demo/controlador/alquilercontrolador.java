@@ -98,6 +98,28 @@ public class alquilercontrolador {
 	}
 	
 	
+	@GetMapping("/gestionarAlqui")
+	public List<Object> gestionarAlqui(@RequestParam Long numeroalquiler) {
+	    List<Object> alq = new LinkedList<>();
+	    Optional<alquiler> alquilerOpt = this.repositorio.findById(numeroalquiler);
+
+	    if (alquilerOpt.isPresent()) {
+	        alquiler alquiler = alquilerOpt.get();
+
+
+	        alquiler.getVehiculo().setEstado("disponible");
+
+	        this.repositorio.deleteById(numeroalquiler);
+	        alq.add("Modificación con exito: " + numeroalquiler);
+	        alq.add("Estado del vehículo actualizado a: Disponible");
+	    } else {
+	        alq.add("No se ha encontrado el alquiler: " + numeroalquiler);
+	    }
+
+	    return alq;
+	}
+	
+	//funcion en procesoasddsadsadsdasdsadas
 	
 	
 	
@@ -107,9 +129,7 @@ public class alquilercontrolador {
 	
 	
 	
-	
-	
-	
+
 	
 	
 	
