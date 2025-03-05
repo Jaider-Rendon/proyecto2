@@ -69,6 +69,7 @@ public class administrador {
 	public void setClavead(Long clavead) {
 		this.clavead = clavead;
 	}
+	//hola
 
 	
 	
