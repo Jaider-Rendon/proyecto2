@@ -45,6 +45,7 @@ public class loginAdmi {
 	public void setAdministrador(administrador administrador) {
 		this.administrador = administrador;
 	}
+	//ya
 	
 	
 	
