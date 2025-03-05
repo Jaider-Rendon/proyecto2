@@ -70,6 +70,7 @@ public class administrador {
 		this.clavead = clavead;
 	}
 	//hola
+	//holaaa
 
 	
 	
