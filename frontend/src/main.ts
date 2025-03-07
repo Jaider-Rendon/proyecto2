@@ -4,3 +4,10 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
+
+
+
+  import { LoginComponent } from './app/login/login.component';
+
+bootstrapApplication(LoginComponent)
+  .catch(err => console.error(err));
