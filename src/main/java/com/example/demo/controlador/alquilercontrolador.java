@@ -120,9 +120,7 @@ public class alquilercontrolador {
 	}
 	
 	//funcion en procesoasddsadsadsdasdsadas
-	
-	
-	
+
 	
 	
 	
