@@ -1,12 +1,9 @@
 package com.example.demo.modelo;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,41 +11,40 @@ import jakarta.persistence.Table;
 
 public class loginAdmi {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE )
-	private Long idloginadmi;
+	@Column(name="codigoadmi")
+	private String usuario;
 	
-	@ManyToOne()
-	@JoinColumn(name = "codigoadmi",referencedColumnName="codigoadmi")
-	private administrador administrador;
+	@Column(name="clavead")
+	private Long clavead;
 
 	public loginAdmi() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public loginAdmi(String usuario, Long clavead) {
+		super();
+		this.usuario = usuario;
+		this.clavead = clavead;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public Long getClavead() {
+		return clavead;
+	}
+
+	public void setClavead(Long clavead) {
+		this.clavead = clavead;
 		
 	}
 
-	public loginAdmi( Long clavead,administrador administrador) {
-		super();
-		this.administrador = administrador;
-	}
-
-	public Long getIdloginadmi() {
-		return idloginadmi;
-	}
-
-	public void setIdloginadmi(Long idloginadmi) {
-		this.idloginadmi = idloginadmi;
-	}
-
-	public administrador getAdministrador() {
-		return administrador;
-	}
-
-	public void setAdministrador(administrador administrador) {
-		this.administrador = administrador;
-	}
-	//ya
 	
 	
-	
-	
-
 }

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.modelo.administrador;
-import com.example.demo.modelo.usuario;
-import com.example.demo.repositorio.administradorRepositorio;
+
+import com.example.demo.modelo.loginAdmi;
+import com.example.demo.repositorio.loginAdmiRepositorio;
 
 @RestController
 @RequestMapping("/login/admin")
@@ -19,22 +19,18 @@ import com.example.demo.repositorio.administradorRepositorio;
 public class loginAdminControlador {
 
 	@Autowired 
-	private administradorRepositorio repositorio2;
+	private loginAdmiRepositorio repositorio2;
 	
 	
 	@GetMapping("/login")
-	public List<Object> loginAdmin(@RequestParam String usuario1, Long clavead1 ){
+	public List<Object> loginAdmin(@RequestParam String usuario1,Long clavead1){
 		 List<Object> resultados = new LinkedList<>();
-		    List<administrador> ad = this.repositorio2.findAll(); 
-		    boolean adminEncontrado = false;
+		    List<loginAdmi> ad =this.repositorio2.findAll(); 
 		    for(int i=0;i<ad.size();i++) {
 		    	String usuario= ad.get(i).getUsuario();
 		    	Long clavead= ad.get(i).getClavead();
 		    	
 		    	 if (usuario.equals(usuario1)) {
-		            adminEncontrado = true; 
-
-		           
 		             if (clavead.equals(clavead1)) {
 		                 resultados.add("Bienvenido administrador");
 		                 return resultados; 
@@ -43,7 +39,11 @@ public class loginAdminControlador {
 		                 return resultados; 
 		             }
 		         }
+		    	 if (usuario != usuario1 & clavead1!=clavead) {
+		    		 resultados.add("no se encuentra este administrador");
+		    	 }
 		     }
+		    
 		     return resultados;	
 	
 	}
